@@ -6,12 +6,16 @@ import Card from "./src/Component/Card";
 import ListingDetailsScreen from "./src/Screens/ListingDetailsScreen";
 import ListItem from "./src/Component/ListItem";
 import ViewImageScreen from "./src/Screens/ViewImageScreen";
-
+import MessagesScreen from "./src/Screens/MessagesScreen";
+import Screen from "./src/Component/Screen";
+import Icon from "./src/Component/Icon";
+import AccountScreen from "./src/Screens/AccountScreen";
+import ListingsScreen from "./src/Screens/ListingsScreen";
 export default function App() {
   return (
-    <View style={styles.container}>
-      <ViewImageScreen />
-    </View>
+    <Screen>
+      <ListingsScreen />
+    </Screen>
   );
 }
 
