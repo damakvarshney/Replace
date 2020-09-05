@@ -6,7 +6,7 @@ import ListingEditScreen from "./src/Screens/ListingEditScreen";
 import MessagesScreen from "./src/Screens/MessagesScreen";
 
 export default function App() {
-  return <MessagesScreen />;
+  return <ListingEditScreen />;
 }
 
 const styles = StyleSheet.create({

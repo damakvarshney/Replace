@@ -5,6 +5,7 @@ export default {
   text: {
     color: colors.dark,
     fontSize: 18,
+    padding: 2,
     fontFamily: Platform.OS === "android" ? "Roboto" : "Avenir",
   },
 };

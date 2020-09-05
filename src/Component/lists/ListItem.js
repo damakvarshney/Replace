@@ -3,8 +3,10 @@ import { View, StyleSheet, Image, TouchableHighlight } from "react-native";
 import colors from "../../config/colors";
 import AppText from "../AppText";
 import Swipeable from "react-native-gesture-handler/Swipeable";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const ListItem = ({
+  materialIconName,
   title,
   subtitle,
   image,
@@ -19,9 +21,22 @@ const ListItem = ({
           {IconComponent}
           {image && <Image style={styles.image} source={image} />}
           <View style={styles.userContainer}>
-            <AppText style={styles.title}>{title}</AppText>
-            {subtitle && <AppText style={styles.listing}>{subtitle}</AppText>}
+            <AppText numberOfLines={1} style={styles.title}>
+              {title}
+            </AppText>
+            {subtitle && (
+              <AppText numberOfLines={2} style={styles.listing}>
+                {subtitle}
+              </AppText>
+            )}
           </View>
+          {materialIconName && (
+            <MaterialCommunityIcons
+              style={styles.materialIcon}
+              name={materialIconName}
+              size={24}
+            />
+          )}
         </View>
       </TouchableHighlight>
     </Swipeable>
@@ -46,6 +61,7 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     flexDirection: "column",
     justifyContent: "center",
+    flex: 1,
   },
   title: {
     marginBottom: 7,
@@ -54,6 +70,10 @@ const styles = StyleSheet.create({
   listing: {
     color: colors.medium,
     fontWeight: "100",
+  },
+  materialIcon: {
+    alignSelf: "center",
+    color: colors.medium,
   },
 });
 
