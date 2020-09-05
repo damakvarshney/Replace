@@ -15,11 +15,14 @@ import colors from "../config/colors";
 import PickerItem from "./PickerItem";
 
 export default function AppPicker({
+  //changing_state
   selectedItem,
   onSelectedItem,
   items,
   numberOfColumns = 1,
+  //renderItem
   PickerItemComponent = PickerItem,
+  //before choosing item placeholder
   placeholder,
   icon,
   width = "100%",
