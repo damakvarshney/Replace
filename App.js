@@ -1,18 +1,19 @@
 import React from "react";
-import { StyleSheet } from "react-native";
-
-import LoginScreen from "./src/Screens/LoginScreen";
+import { View, StyleSheet } from "react-native";
 import ListingEditScreen from "./src/Screens/ListingEditScreen";
-import MessagesScreen from "./src/Screens/MessagesScreen";
+import Screen from "./src/Component/Screen";
 
-export default function App() {
-  return <ListingEditScreen />;
-}
-
+const App = () => {
+  return (
+    <Screen>
+      <ListingEditScreen />
+    </Screen>
+  );
+};
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
   },
 });
+
+export default App;

@@ -10,12 +10,14 @@ import {
   AppFormPicker,
 } from "../Component/forms";
 import colors from "../config/colors";
+import FormImagePicker from "./../Component/forms/FormImagePicker";
 
 const validationSchema = Yup.object().shape({
   title: Yup.string().required().min(1).label("Title"),
   price: Yup.string().required().min(1).max(10000).label("Price"),
-  description: Yup.string().required().label("Description"),
+  description: Yup.string().label("Description"),
   category: Yup.object().required().nullable().label("Category"),
+  images: Yup.array().min(1, "Please select at least one image."),
 });
 
 const categories = [
@@ -59,30 +61,32 @@ const ListingEditScreen = () => {
           price: "",
           description: "",
           category: null,
+          images: [],
         }}
         onSubmit={(values) => console.log(values)}
         validationSchema={validationSchema}
       >
+        <FormImagePicker name="images" />
         <AppFormField maxLength={255} name="title" placeholder="Title" />
-        <View style={styles.priceNCategory}>
-          <AppFormField
-            keyboardTypes="numeric"
-            maxLength={8}
-            name="price"
-            placeholder="Price"
-            width={120}
-            numberOfLines={1}
-          />
 
-          <AppFormPicker
-            items={categories}
-            name="category"
-            placeholder="Category"
-            width={200}
-            PickerItemComponent={CategoryPickerItem}
-            numberOfColumns={2}
-          />
-        </View>
+        <AppFormField
+          keyboardTypes="numeric"
+          maxLength={8}
+          name="price"
+          placeholder="Price"
+          width={120}
+          numberOfLines={1}
+        />
+
+        <AppFormPicker
+          items={categories}
+          name="category"
+          placeholder="Category"
+          width={200}
+          PickerItemComponent={CategoryPickerItem}
+          numberOfColumns={3}
+        />
+
         <AppFormField
           maxLength={255}
           name="description"
@@ -103,6 +107,7 @@ const styles = StyleSheet.create({
   priceNCategory: {
     flexDirection: "row",
     justifyContent: "space-between",
+    alignContent: "space-between",
   },
 });
 
