@@ -1,19 +1,13 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
-import ListingEditScreen from "./src/Screens/ListingEditScreen";
-import Screen from "./src/Component/Screen";
+import { NavigationContainer } from "@react-navigation/native";
+import AuthNavigator from "./src/navigation/AuthNavigator";
+import navigationTheme from "./src/navigation/navigationTheme";
+import AppNavigator from "./src/navigation/AppNavigator";
 
-const App = () => {
+export default function App() {
   return (
-    <Screen>
-      <ListingEditScreen />
-    </Screen>
+    <NavigationContainer theme={navigationTheme}>
+      <AppNavigator />
+    </NavigationContainer>
   );
-};
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
-
-export default App;
+}

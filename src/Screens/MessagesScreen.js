@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, FlatList, View } from "react-native";
+import { FlatList, View } from "react-native";
 import ListItem from "../Component/lists/ListItem";
 import Screen from "../Component/Screen";
 import ListItemSeparator from "../Component/lists/ListItemSeparator";
@@ -33,7 +33,7 @@ const MessagesScreen = () => {
   };
 
   return (
-    <Screen style={styles.screen}>
+    <View>
       <FlatList
         data={messages}
         keyExtractor={(messages) => messages.id.toString()}
@@ -55,18 +55,29 @@ const MessagesScreen = () => {
           setMessages([
             {
               id: 1,
-              title: "Kelly Kapoor",
+              title: "Pooh Malhotra",
               description:
                 "Hey! I am interested in this item... Whats your last price?",
-              image: require("../../assets/person.jpg"),
+              image: require("../../assets/pooh.jpg"),
+            },
+            {
+              id: 2,
+              title: "Rohan Mehra",
+              description: "I received your package, Its Really Awesome",
+              image: require("../../assets/person2.jpg"),
+            },
+            {
+              id: 3,
+              title: "Aditiya Shekhar",
+              description:
+                "I wanted to buy that jewelry... It sounds very Vintage.",
+              image: require("../../assets/Aiditya.jpg"),
             },
           ]);
         }}
       />
-    </Screen>
+    </View>
   );
 };
-
-const styles = StyleSheet.create({});
 
 export default MessagesScreen;

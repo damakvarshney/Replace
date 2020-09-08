@@ -4,20 +4,19 @@ import colors from "../config/colors";
 import AppText from "../Component/AppText";
 import ListItem from "../Component/lists/ListItem";
 
-const ListingDetailsScreen = () => {
+const ListingDetailsScreen = ({ route }) => {
+  const listing = route.params;
   return (
     <View>
-      <Image
-        style={styles.image}
-        source={require("../../assets/tableLamp.png")}
-      />
+      <Image style={styles.image} source={listing.image} />
       <View style={styles.detailsContainer}>
-        <AppText style={styles.title}>Lamp for Sale</AppText>
-        <AppText style={styles.price}>$100</AppText>
+        <AppText style={styles.title}>{listing.title}</AppText>
+        <AppText style={styles.price}>Rs {listing.price}</AppText>
         <ListItem
           image={require("../../assets/person.jpg")}
           title="Kelly"
           subtitle="5 listings"
+          materialIconName="chevron-right"
         />
       </View>
     </View>
@@ -26,11 +25,15 @@ const ListingDetailsScreen = () => {
 
 const styles = StyleSheet.create({
   image: {
-    width: "100%",
+    alignSelf: "center",
+    width: "90%",
     height: 300,
+    margin: 10,
+    marginTop: 20,
+    borderRadius: 10,
   },
   detailsContainer: {
-    padding: 20,
+    marginHorizontal: 20,
   },
   title: {
     marginBottom: 7,

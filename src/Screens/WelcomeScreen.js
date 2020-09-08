@@ -2,7 +2,7 @@ import React from "react";
 import { View, StyleSheet, ImageBackground, Image, Text } from "react-native";
 import AppButton from "../Component/AppButton";
 
-const WelcomeScreen = () => {
+const WelcomeScreen = ({ navigation }) => {
   return (
     <ImageBackground
       blurRadius={1}
@@ -11,12 +11,15 @@ const WelcomeScreen = () => {
     >
       <View style={styles.logoContainer}>
         <Image style={styles.logo} source={require("../../assets/icon.png")} />
-        <Text style={styles.tagline}>|| Time to Replace Stuff||</Text>
       </View>
 
       <View style={styles.buttonContainer}>
-        <AppButton title="Login" />
-        <AppButton title="Register" color="blurGreen" />
+        <AppButton title="Login" onPress={() => navigation.navigate("Login")} />
+        <AppButton
+          title="Register"
+          color="blurGreen"
+          onPress={() => navigation.navigate("Register")}
+        />
       </View>
     </ImageBackground>
   );
@@ -24,28 +27,28 @@ const WelcomeScreen = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 2,
     justifyContent: "flex-end",
   },
   logoContainer: {
+    flex: 1,
     alignItems: "center",
-    position: "absolute",
-    top: 100,
-    left: 80,
+    justifyContent: "center",
   },
   logo: {
-    width: 120,
-    height: 120,
+    width: 150,
+    height: 150,
   },
   tagline: {
     fontSize: 18,
     fontWeight: "600",
   },
   buttonContainer: {
+    flex: 1,
     padding: 20,
     width: "100%",
     flexDirection: "column",
-    justifyContent: "flex-start",
+    justifyContent: "flex-end",
   },
 });
 

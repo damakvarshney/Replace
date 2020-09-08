@@ -1,52 +1,58 @@
-import { StyleSheet } from "react-native";
 import React from "react";
-
+import { StyleSheet } from "react-native";
 import * as Yup from "yup";
-
-import AppText from "../Component/AppText";
 import colors from "../config/colors";
-import AppFormField from "../Component/forms/AppFormField";
+import AppText from "../Component/AppText";
 import Screen from "../Component/Screen";
-import SubmitButton from "../Component/forms/SubmitButton";
-import AppForm from "../Component/forms/AppForm";
+import { AppForm, AppFormField, SubmitButton } from "../Component/forms";
 
 const validationSchema = Yup.object().shape({
+  name: Yup.string().required().label("Name"),
   email: Yup.string().required().email().label("Email"),
-  password: Yup.string().required().min(4).label("Password "),
+  password: Yup.string().required().min(4).label("Password"),
 });
 
-const LoginScreen = () => {
+export default function RegisterScreen() {
   return (
     <Screen style={styles.container}>
-      <AppText style={styles.loginHeading}>Login</AppText>
+      <AppText style={styles.loginHeading}>Register</AppText>
       <AppForm
-        initialValues={{ email: "", password: "" }}
+        initialValues={{ name: "", email: "", password: "" }}
         onSubmit={(values) => console.log(values)}
         validationSchema={validationSchema}
       >
         <AppFormField
+          autoCapitalize="none"
+          icon="account"
+          name="name"
+          placeholder="Name"
+        />
+
+        <AppFormField
+          autoCapitalize="none"
           autoCorrect={false}
           icon="email"
-          placeholder="Email"
-          name="email"
           keyboardType="email-address"
-          autoCapitalize="none"
+          name="email"
+          placeholder="Email"
           textContentType="emailAddress"
         />
+
         <AppFormField
+          autoCapitalize="none"
           autoCorrect={false}
           icon="lock"
+          name="password"
           placeholder="Password"
           secureTextEntry
-          name="password"
-          autoCapitalize="none"
           textContentType="password"
         />
-        <SubmitButton title="Login" />
+
+        <SubmitButton title="Register" />
       </AppForm>
     </Screen>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -59,5 +65,3 @@ const styles = StyleSheet.create({
     paddingVertical: 60,
   },
 });
-
-export default LoginScreen;

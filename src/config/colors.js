@@ -11,4 +11,5 @@ export default {
   blurRed: "rgba(255, 31, 31, 0.69)",
   blurGreen: "rgba(43, 171, 152, 0.8)",
   silverGrey: "#d6d6d6",
+  dodgerBlue: "#1E90FF",
 };
