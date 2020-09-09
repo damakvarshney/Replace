@@ -4,6 +4,7 @@ import Screen from "../Component/Screen";
 import { FlatList } from "react-native-gesture-handler";
 import Card from "../Component/Card";
 import colors from "../config/colors";
+import routes from "../navigation/routes";
 
 const listings = [
   {
@@ -49,7 +50,7 @@ const ListingsScreen = ({ navigation }) => {
             title={item.title}
             subtitle={item.price}
             image={item.image}
-            onPress={() => navigation.navigate("ListingDetails", item)}
+            onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
           />
         )}
       />

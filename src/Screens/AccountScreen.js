@@ -6,6 +6,7 @@ import { FlatList } from "react-native-gesture-handler";
 import colors from "../config/colors";
 import Icon from "../Component/Icon";
 import ListItemSeparator from "../Component/lists/ListItemSeparator";
+import routes from "../navigation/routes";
 
 const menuItems = [
   {

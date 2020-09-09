@@ -11,7 +11,7 @@ const Card = ({ title, subtitle, image, onPress }) => {
         <Image style={styles.image} source={image} />
         <View style={styles.detailsContainer}>
           <AppText style={styles.title}>{title}</AppText>
-          <AppText style={styles.subtitle}>{subtitle}</AppText>
+          <AppText style={styles.subtitle}>Rs {subtitle}</AppText>
         </View>
       </View>
     </TouchableWithoutFeedback>
@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     marginBottom: 20,
     overflow: "hidden",
+    elevation: 3,
   },
   detailsContainer: {
     padding: 20,
