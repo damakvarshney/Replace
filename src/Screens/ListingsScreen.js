@@ -1,47 +1,34 @@
-import React from "react";
-import { View, StyleSheet } from "react-native";
+import React, { useEffect, useState } from "react";
+import { StyleSheet } from "react-native";
 import Screen from "../Component/Screen";
 import { FlatList } from "react-native-gesture-handler";
 import Card from "../Component/Card";
 import colors from "../config/colors";
 import routes from "../navigation/routes";
-
-const listings = [
-  {
-    id: 1,
-    title: "Watch for Sale",
-    price: 1500,
-    image: require("../../assets/watch.jpg"),
-  },
-  {
-    id: 2,
-    title: "Dinning table for Sale",
-    price: 9999,
-    image: require("../../assets/diningTable.jpg"),
-  },
-  {
-    id: 3,
-    title: "Makeup Kit for Sale",
-    price: 750,
-    image: require("../../assets/makeup_kit.jpg"),
-  },
-  {
-    id: 4,
-    title: "Table lamp for Sale",
-    price: 200,
-    image: require("../../assets/tableLamp.png"),
-  },
-  {
-    id: 5,
-    title: "Jewelry lamp for Sale",
-    price: 950,
-    image: require("../../assets/jewwlery.jpg"),
-  },
-];
+import listingsApi from "../api/listings";
+import AppText from "../Component/AppText";
+import AppButton from "./../Component/AppButton";
+import AppActivityIndicator from "./../Component/ActivityIndicator";
+import useApi from "./../hooks/useApi";
 
 const ListingsScreen = ({ navigation }) => {
+  const { data: listings, error, loading, request: loadListings } = useApi(
+    listingsApi.getListings
+  );
+
+  useEffect(() => {
+    loadListings();
+  }, []);
+
   return (
     <Screen style={styles.screen}>
+      {error && (
+        <>
+          <AppText>Couldn't retrieve the listings.</AppText>
+          <AppButton title="Retry" onPress={loadListings} />
+        </>
+      )}
+      <AppActivityIndicator visible={loading} />
       <FlatList
         data={listings}
         keyExtractor={(listings) => listings.id.toString()}
@@ -49,7 +36,7 @@ const ListingsScreen = ({ navigation }) => {
           <Card
             title={item.title}
             subtitle={item.price}
-            image={item.image}
+            imageUrl={console.log(item.images[0].url)}
             onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
           />
         )}

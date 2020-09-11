@@ -4,12 +4,19 @@ import { useFormikContext } from "formik";
 import ErrorMessage from "./ErrorMessage";
 import AppTextInput from "../AppTextInput";
 const AppFormField = ({ name, width, ...otherProps }) => {
-  const { setFieldTouched, handleChange, errors, touched } = useFormikContext();
+  const {
+    setFieldTouched,
+    setFieldValue,
+    errors,
+    touched,
+    values,
+  } = useFormikContext();
   return (
     <View style={{ flexDirection: "column" }}>
       <AppTextInput
         onBlur={() => setFieldTouched(name)}
-        onChangeText={handleChange(name)}
+        onChangeText={(text) => setFieldValue(name, text)}
+        value={values[name]}
         width={width}
         {...otherProps}
       />
