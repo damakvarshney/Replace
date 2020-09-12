@@ -8,7 +8,7 @@ const Card = ({ title, subtitle, imageUrl, onPress }) => {
   return (
     <TouchableWithoutFeedback onPress={onPress}>
       <View style={styles.card}>
-        <Image style={styles.image} source={{ uri: imageUrl }} />
+        {imageUrl && <Image style={styles.image} source={{ uri: imageUrl }} />}
         <View style={styles.detailsContainer}>
           <AppText style={styles.title}>{title}</AppText>
           <AppText style={styles.subtitle}>Rs {subtitle}</AppText>
@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
     height: 200,
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
+    resizeMode: "contain",
   },
   subtitle: {
     color: colors.secondary,

@@ -1,6 +1,5 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import AuthNavigator from "./src/navigation/AuthNavigator";
 import navigationTheme from "./src/navigation/navigationTheme";
 import AppNavigator from "./src/navigation/AppNavigator";
 

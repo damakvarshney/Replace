@@ -69,7 +69,7 @@ const ListingEditScreen = () => {
 
     setUploadVisible(false);
     if (!result.ok) {
-      console.log(result.problem);
+      console.log(result.originalError);
       setUploadVisible(false);
       alert("Could not save the listing");
     }
