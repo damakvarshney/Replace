@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { StyleSheet } from "react-native";
 import Screen from "../Component/Screen";
 import { FlatList } from "react-native-gesture-handler";
@@ -36,7 +36,8 @@ const ListingsScreen = ({ navigation }) => {
           <Card
             title={item.title}
             subtitle={item.price}
-            imageUrl={item.images[0].url}
+            imageUrl={item.images[0].thumbnailUrl}
+            thumbnailUrl={item.images[0].thumbnailUrl}
             onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
           />
         )}
