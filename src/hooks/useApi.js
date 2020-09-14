@@ -1,5 +1,5 @@
 import { useState } from "react";
-//apiFunc() is the function being used for getting data  
+//apiFunc() is the function being used for getting data
 export default useApi = (apiFunc) => {
   const [data, setData] = useState([]);
   const [error, setError] = useState(false);
@@ -9,12 +9,14 @@ export default useApi = (apiFunc) => {
     setLoading(true);
     const response = await apiFunc();
     setLoading(false);
-    if (!response.ok) {
-      setError(true);
-      return;
-    }
-    setError(false);
+    // if (!response.ok) {
+    //   setError(true);
+    //   return;
+    // }
+    setError(!response.ok);
+    // setError(false);
     setData(response.data);
+    return response;
   };
   return {
     data,
