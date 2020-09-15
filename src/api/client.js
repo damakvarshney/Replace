@@ -3,7 +3,7 @@ import cache from "../utility/cache";
 import authStorage from "../auth/storage";
 import settings from "../config/settings";
 const client = create({
-  baseURL: settings.apiUrl,
+  baseURL: "http://192.168.42.162:9000/api",
 });
 
 client.addAsyncRequestTransform(async (request) => {

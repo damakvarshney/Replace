@@ -4,11 +4,12 @@ import colors from "../config/colors";
 import AppText from "../Component/AppText";
 import ListItem from "../Component/lists/ListItem";
 import { Image } from "react-native-expo-image-cache";
+import Screen from "./../Component/Screen";
 
 const ListingDetailsScreen = ({ route }) => {
   const listing = route.params;
   return (
-    <View>
+    <Screen>
       <Image
         style={styles.image}
         preview={{ uri: listing.images[0].thumbnailUrl }}
@@ -25,7 +26,7 @@ const ListingDetailsScreen = ({ route }) => {
           materialIconName="chevron-right"
         />
       </View>
-    </View>
+    </Screen>
   );
 };
 

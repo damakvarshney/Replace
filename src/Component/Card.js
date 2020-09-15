@@ -13,7 +13,7 @@ const Card = ({ title, subtitle, imageUrl, onPress, thumbnailUrl }) => {
             style={styles.image}
             tint="light"
             preview={{ uri: thumbnailUrl }}
-            uri={{ imageUrl }}
+            uri={imageUrl}
             transitionDuration="0"
           />
         )}

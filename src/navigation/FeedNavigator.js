@@ -14,8 +14,16 @@ const FeedNavigator = () => (
       title: "Replace",
     }}
   >
-    <Stack.Screen name="Listings" component={ListingsScreen} />
-    <Stack.Screen name="ListingDetails" component={ListingDetailsScreen} />
+    <Stack.Screen
+      name="Listings"
+      component={ListingsScreen}
+      options={{ headerShown: false }}
+    />
+    <Stack.Screen
+      name="ListingDetails"
+      component={ListingDetailsScreen}
+      options={{ headerShown: false }}
+    />
   </Stack.Navigator>
 );
 

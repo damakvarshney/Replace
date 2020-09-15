@@ -8,12 +8,12 @@ import navigationTheme from "./src/navigation/navigationTheme";
 import OfflineNotice from "./src/Component/OfflineNotice";
 import AuthContext from "./src/auth/context";
 import authStorage from "./src/auth/storage";
-import logger from "./src/utility/logger";
+// import logger from "./src/utility/logger";
 import { navigationRef } from "./src/navigation/rootNavigation";
-logger.start();
+// logger.start();
 
 export default function App() {
-  logger.log(new Error("Error in app"));
+  // logger.log(new Error("Error in app"));
   const [user, setUser] = useState();
   const [isReady, setIsReady] = useState(false);
 
@@ -31,6 +31,7 @@ export default function App() {
     <AuthContext.Provider value={{ user, setUser }}>
       <OfflineNotice />
       <NavigationContainer ref={navigationRef} theme={navigationTheme}>
+        {/* <AppNavigator /> */}
         {user ? <AppNavigator /> : <AuthNavigator />}
       </NavigationContainer>
     </AuthContext.Provider>
