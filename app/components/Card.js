@@ -12,6 +12,7 @@ const Card = ({ title, subtitle, imageUrl, onPress, thumbnailUrl }) => {
         {imageUrl && (
           <Image
             style={styles.image}
+            // source={{ uri: imageUrl }}
             tint="light"
             preview={{ uri: thumbnailUrl }}
             uri={imageUrl}
