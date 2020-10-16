@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { AppLoading } from "expo";
 
-import AppNavigator from "./src/navigation/AppNavigator";
-import AuthNavigator from "./src/navigation/AuthNavigator";
-import navigationTheme from "./src/navigation/navigationTheme";
-import OfflineNotice from "./src/Component/OfflineNotice";
-import AuthContext from "./src/auth/context";
-import authStorage from "./src/auth/storage";
-// import logger from "./src/utility/logger";
-import { navigationRef } from "./src/navigation/rootNavigation";
+import AppNavigator from "./app/navigation/AppNavigator";
+import AuthNavigator from "./app/navigation/AuthNavigator";
+import navigationTheme from "./app/navigation/navigationTheme";
+import OfflineNotice from "./app/components/OfflineNotice";
+import AuthContext from "./app/auth/context";
+import authStorage from "./app/auth/storage";
+// import logger from "./app/utility/logger";
+import { navigationRef } from "./app/navigation/rootNavigation";
 // logger.start();
 
 export default function App() {
@@ -31,7 +31,6 @@ export default function App() {
     <AuthContext.Provider value={{ user, setUser }}>
       <OfflineNotice />
       <NavigationContainer ref={navigationRef} theme={navigationTheme}>
-        {/* <AppNavigator /> */}
         {user ? <AppNavigator /> : <AuthNavigator />}
       </NavigationContainer>
     </AuthContext.Provider>
