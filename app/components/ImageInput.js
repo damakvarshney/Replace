@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import {
-  StyleSheet,
   View,
+  StyleSheet,
   Image,
   TouchableWithoutFeedback,
   Alert,
@@ -11,14 +11,13 @@ import * as ImagePicker from "expo-image-picker";
 
 import colors from "../config/colors";
 
-export default function ImageInput({ imageUri, onChangeImage }) {
+function ImageInput({ imageUri, onChangeImage }) {
   useEffect(() => {
     requestPermission();
   }, []);
 
   const requestPermission = async () => {
     const { granted } = await ImagePicker.requestCameraRollPermissionsAsync();
-
     if (!granted) alert("You need to enable permission to access the library.");
   };
 
@@ -37,7 +36,6 @@ export default function ImageInput({ imageUri, onChangeImage }) {
         mediaTypes: ImagePicker.MediaTypeOptions.Images,
         quality: 0.5,
       });
-
       if (!result.cancelled) onChangeImage(result.uri);
     } catch (error) {
       console.log("Error reading an image", error);
@@ -47,7 +45,6 @@ export default function ImageInput({ imageUri, onChangeImage }) {
   return (
     <TouchableWithoutFeedback onPress={handlePress}>
       <View style={styles.container}>
-        {/* After this if imageUri is available it will vanish */}
         {!imageUri && (
           <MaterialCommunityIcons
             color={colors.medium}
@@ -55,7 +52,6 @@ export default function ImageInput({ imageUri, onChangeImage }) {
             size={40}
           />
         )}
-
         {imageUri && <Image source={{ uri: imageUri }} style={styles.image} />}
       </View>
     </TouchableWithoutFeedback>
@@ -79,3 +75,5 @@ const styles = StyleSheet.create({
     margin: 10,
   },
 });
+
+export default ImageInput;

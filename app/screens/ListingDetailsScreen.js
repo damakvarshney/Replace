@@ -5,10 +5,13 @@ import AppText from "../components/AppText";
 import ListItem from "../components/lists/ListItem";
 import { Image } from "react-native-expo-image-cache";
 import Screen from "./../components/Screen";
+import useAuth from "./../auth/useAuth";
 
 const ListingDetailsScreen = ({ route }) => {
   const listing = route.params;
-  console.log(listing.images[0].url);
+
+  const { user } = useAuth();
+
   return (
     <Screen>
       <Image
@@ -21,9 +24,9 @@ const ListingDetailsScreen = ({ route }) => {
         <AppText style={styles.title}>{listing.title}</AppText>
         <AppText style={styles.price}>Rs {listing.price}</AppText>
         <ListItem
-          image={require("../assets/person.jpg")}
-          title="Kelly"
-          subtitle="5 listings"
+          image={require("../assets/user.png")}
+          title={user.name}
+          subtitle="2 Listings"
           materialIconName="chevron-right"
         />
       </View>

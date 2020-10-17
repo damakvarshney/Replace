@@ -14,7 +14,7 @@ const menuItems = [
       name: "format-list-bulleted",
       backgroundColor: colors.primary,
     },
-    targetScreen: "Messages",
+    targetScreen: "MyListings",
   },
   {
     title: "My Messages",
@@ -34,7 +34,6 @@ const AccountScreen = ({ navigation }) => {
         <ListItem
           title={user.name}
           subtitle={user.email}
-          onPress={() => console.log("onpress")}
           image={require("../assets/user.png")}
         />
       </View>
