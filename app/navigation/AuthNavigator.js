@@ -4,6 +4,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import LoginScreen from "../screens/LoginScreen";
 import RegisterScreen from "../screens/RegisterScreen";
 import WelcomeScreen from "../screens/WelcomeScreen";
+import colors from "../config/colors";
 
 const Stack = createStackNavigator();
 
@@ -14,8 +15,22 @@ const AuthNavigator = () => (
       component={WelcomeScreen}
       options={{ headerShown: false }}
     />
-    <Stack.Screen name="Login" component={LoginScreen} />
-    <Stack.Screen name="Register" component={RegisterScreen} />
+    <Stack.Screen
+      name="Login"
+      component={LoginScreen}
+      options={{
+        headerTintColor: colors.white,
+        headerStyle: { backgroundColor: colors.dodgerBlue },
+      }}
+    />
+    <Stack.Screen
+      name="Register"
+      component={RegisterScreen}
+      options={{
+        headerTintColor: colors.white,
+        headerStyle: { backgroundColor: colors.dodgerBlue },
+      }}
+    />
   </Stack.Navigator>
 );
 

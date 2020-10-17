@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, View } from "react-native";
 import Screen from "../components/Screen";
 import { FlatList } from "react-native-gesture-handler";
 import Card from "../components/Card";
@@ -23,7 +23,7 @@ const ListingsScreen = ({ navigation }) => {
   return (
     <>
       <AppActivityIndicator visible={loading} />
-      <Screen style={styles.screen}>
+      <View style={styles.screen}>
         {error && (
           <>
             <AppText>Couldn't retrieve the listings.</AppText>
@@ -44,14 +44,15 @@ const ListingsScreen = ({ navigation }) => {
             />
           )}
         />
-      </Screen>
+      </View>
     </>
   );
 };
 const styles = StyleSheet.create({
   screen: {
     backgroundColor: colors.light,
-    padding: 10,
+    paddingHorizontal: 10,
+    paddingTop: 7,
   },
 });
 export default ListingsScreen;

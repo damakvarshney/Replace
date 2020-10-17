@@ -3,7 +3,7 @@ import cache from "../utility/cache";
 import authStorage from "../auth/storage";
 
 const apiClient = create({
-  baseURL: "http://2ac427145607.ngrok.io/api",
+  baseURL: "http://b994f4d918fd.ngrok.io/api",
 });
 
 apiClient.addAsyncRequestTransform(async (request) => {

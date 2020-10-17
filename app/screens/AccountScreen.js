@@ -35,7 +35,7 @@ const AccountScreen = ({ navigation }) => {
           title={user.name}
           subtitle={user.email}
           onPress={() => console.log("onpress")}
-          image={require("../assets/person.jpg")}
+          image={require("../assets/user.png")}
         />
       </View>
       <View style={styles.container}>

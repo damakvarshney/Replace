@@ -11,10 +11,12 @@ const expoPushTokens = require("./routes/expoPushTokens");
 const helmet = require("helmet");
 const compression = require("compression");
 const config = require("config");
+
 const app = express();
 
 app.use(express.static("public"));
 app.use(express.json());
+
 app.use(helmet());
 app.use(compression());
 
@@ -27,6 +29,19 @@ app.use("/api/auth", auth);
 app.use("/api/my", my);
 app.use("/api/expoPushTokens", expoPushTokens);
 app.use("/api/messages", messages);
+
+app.all("*", function (req, resp, next) {
+  console.log(
+    req.method +
+      " " +
+      req.url +
+      " " +
+      req.rawHeaders[10] +
+      " " +
+      req.rawHeaders[11]
+  ); // do anything you want here
+  next();
+});
 
 const port = process.env.PORT || config.get("port");
 app.listen(port, function () {

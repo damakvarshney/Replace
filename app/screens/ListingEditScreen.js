@@ -120,6 +120,7 @@ const ListingEditScreen = () => {
           maxLength={255}
           name="description"
           numberOfLines={3}
+          multiline={true}
           placeholder="Description"
         />
         <SubmitButton title="Post" />

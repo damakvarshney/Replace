@@ -7,6 +7,7 @@ import FeedNavigator from "./FeedNavigator";
 import ListingEditScreen from "../screens/ListingEditScreen";
 import NewListingButton from "./NewListingButton";
 import routes from "./routes";
+import colors from "../config/colors";
 
 const Tab = createBottomTabNavigator();
 
@@ -16,6 +17,7 @@ const AppNavigator = () => (
       name="Feed"
       component={FeedNavigator}
       options={{
+        tabBarLabel: "Home",
         tabBarIcon: ({ color, size }) => (
           <MaterialCommunityIcons name="home" color={color} size={size} />
         ),
