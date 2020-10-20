@@ -5,7 +5,7 @@ import colors from "../config/colors";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 import { Image } from "react-native-expo-image-cache";
 const Card = ({ title, subtitle, imageUrl, onPress, thumbnailUrl }) => {
-  console.log(imageUrl);
+  // console.log(imageUrl);
   return (
     <TouchableWithoutFeedback onPress={onPress}>
       <View style={styles.card}>

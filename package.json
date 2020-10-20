@@ -17,6 +17,7 @@
     "@react-navigation/stack": "^5.3.5",
     "apisauce": "^1.1.1",
     "bugsnag-expo-cli": "^7.3.0",
+    "dayjs": "^1.9.3",
     "expo": "~38.0.8",
     "expo-blur": "^8.1.2",
     "expo-constants": "^9.1.1",
