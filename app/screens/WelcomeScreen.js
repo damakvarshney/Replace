@@ -11,7 +11,10 @@ const WelcomeScreen = ({ navigation }) => {
       source={require("../assets/withoutLogo.png")}
     >
       <View style={styles.logoContainer}>
-        <Image style={styles.logo} source={require("../assets/icon.png")} />
+        <Image
+          style={styles.logo}
+          source={require("../assets/circleIcon.png")}
+        />
       </View>
 
       <View style={styles.buttonContainer}>
