@@ -26,7 +26,7 @@ const listings = [
 ];
 
 const addMyListing = (listing) => {
-  listing.id = Math.floor(Date.now() / 1000);
+  listing.id = listings.length + 1;
   listings.push(listing);
 };
 

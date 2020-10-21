@@ -5,7 +5,7 @@ import settings from "../config/settings";
 //api_url need to be mention in settings
 
 const apiClient = create({
-  baseURL: "http://f44f9aee24bc.ngrok.io/api",
+  baseURL: "http://d958dc15c9df.ngrok.io/api",
 });
 
 apiClient.addAsyncRequestTransform(async (request) => {

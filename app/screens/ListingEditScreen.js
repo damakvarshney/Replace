@@ -62,15 +62,16 @@ const ListingEditScreen = () => {
   const handleSubmit = async (listing, { resetForm }) => {
     setProgress(0);
     setUploadVisible(true);
-    const result = await listingsApi.addListing(
+    // const result = await listingsApi.addListing(
+    //   { ...listing, location },
+    //   (progress) => setProgress(progress)
+    // );
+
+    const result = await listingsApi.addMyListing(
       { ...listing, location },
       (progress) => setProgress(progress)
-      // );
-
-      // const result = await listingsApi.addMyListing(
-      //   { ...listing, location },
-      //   (progress) => setProgress(progress)
     );
+    console.log("Result :", result);
 
     setUploadVisible(false);
     if (!result.ok) {

@@ -15,7 +15,7 @@ function ImageInput({ imageUri, onChangeImage }) {
   useEffect(() => {
     requestPermission();
   }, []);
-  console.log("Image Input", imageUri);
+  // console.log("Image Input", imageUri);
 
   const requestPermission = async () => {
     const { granted } = await ImagePicker.requestCameraRollPermissionsAsync();

@@ -1,4 +1,4 @@
 {
-  "assetsBaseUrl": "http://192.168.42.162:9000/assets/",
+  "assetsBaseUrl": "http://d958dc15c9df.ngrok.io/assets/",
   "port": 9000
 }
