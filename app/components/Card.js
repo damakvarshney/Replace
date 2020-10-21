@@ -12,10 +12,9 @@ const Card = ({ title, subtitle, imageUrl, onPress, thumbnailUrl }) => {
         {imageUrl && (
           <Image
             style={styles.image}
-            // source={{ uri: imageUrl }}
-            tint="light"
+            tint="dark"
             preview={{ uri: thumbnailUrl }}
-            uri={imageUrl}
+            uri={console.log(imageUrl)}
             transitionDuration="300"
           />
         )}

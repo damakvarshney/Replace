@@ -8,7 +8,7 @@ export default useNotifications = (notificationListener) => {
   useEffect(() => {
     registerForPushNotifications();
 
-    // if (notificationListener) Notifications.addListener(notificationListener);
+    if (notificationListener) Notifications.addListener(notificationListener);
   }, []);
 
   const registerForPushNotifications = async () => {

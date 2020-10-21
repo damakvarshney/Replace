@@ -60,7 +60,6 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     width: "100%",
     height: 300,
-
     borderRadius: 10,
   },
 

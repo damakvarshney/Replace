@@ -7,6 +7,7 @@ import { useFormikContext } from "formik";
 const FormImagePicker = ({ name }) => {
   const { errors, touched, values, setFieldValue } = useFormikContext();
   const imageUris = values[name];
+  console.log("1st image input", imageUris);
 
   const handleAdd = (uri) => {
     setFieldValue(name, [...imageUris, uri]);
