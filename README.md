@@ -8,6 +8,33 @@ A Consumer to Consumer Model based E-Commerce application where people can trade
 - Allows users to send enquires to sellers on their particular Items.
 - Account Screen / Signout.
 
+## Third Party Libraries
+
+### For Designing
+- Airbnb - Lottie React Native
+- Image - Expo Blur (Thumbnail) Expo Image Picker(Image).
+
+### For Networking
+- Data Supply - ApiSauce(Wrapper of Axios and Standardised Errors).
+
+#### Offline
+- Netinfo   
+- React Native Expo Image Cache
+- Expo Secure Store
+- Async Storage
+
+
+### For Navigation
+- React Native Navigation.
+
+### For Authentication
+- Schema - Yup.
+- Form Building- Formik.
+- JWT Decode.
+
+### After Production
+- Bugsnag (Kinda Firebase Crashalytics).
+
 ## Installation
 
 Within both the `/app` & `/server` directory install the npm packages with:
