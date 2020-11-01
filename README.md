@@ -71,6 +71,6 @@ Then within `/app/src/api/tracker.js`. Update `http://localhost:9000` with the "
 
 ## ScreenShots
 
-These all are the screenshots related to Trackoholic, ranging from SplashScreen to Account Screen. All Screens are designed in `@AdobeXD`.
+These all are the screenshots related to Replace, ranging from SplashScreen to Account Screen. All Screens are designed in `@AdobeXD`.
 
 ![Alt text](https://raw.githubusercontent.com/damakvarshney/Replace/master/ScreenShots/Replace%20Project.png?raw=true "SplashScreen")
