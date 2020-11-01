@@ -73,32 +73,4 @@ Then within `/app/src/api/tracker.js`. Update `http://localhost:9000` with the "
 
 These all are the screenshots related to Trackoholic, ranging from SplashScreen to Account Screen. All Screens are designed in `@AdobeXD`.
 
-### SplashScreen
-![Alt text](https://github.com/damakvarshney/Replace/blob/master/ScreenShots/splash.png?raw=true "SplashScreen")
-
-### WelcomeScreen
-![Alt text](https://github.com/damakvarshney/Replace/blob/master/ScreenShots/welcome.png?raw=true "SplashScreen")
-
-### RegisterScreen
-![Alt text](https://github.com/damakvarshney/Replace/blob/master/ScreenShots/register.png?raw=true "SplashScreen")
-
-### LoginScreen
-![Alt text](https://github.com/damakvarshney/Replace/blob/master/ScreenShots/logIn.png?raw=true "SplashScreen")
-
-### LoadingScreen
-![Alt text](https://github.com/damakvarshney/Replace/blob/master/ScreenShots/loading.png?raw=true "SplashScreen")
-
-### ListingScreen
-![Alt text](https://github.com/damakvarshney/Replace/blob/master/ScreenShots/listings.png?raw=true "SplashScreen")
-
-### Item DetailScreen
-![Alt text](https://github.com/damakvarshney/Replace/blob/master/ScreenShots/deltail.png?raw=true "SplashScreen")
-
-### Add ItemScreen
-![Alt text](https://github.com/damakvarshney/Replace/blob/master/ScreenShots/add.png?raw=true "SplashScreen")
-
-### AccountScreen
-![Alt text](https://github.com/damakvarshney/Replace/blob/master/ScreenShots/account.png?raw=true "SplashScreen")
-
-### MessageScreen
-![Alt text](https://github.com/damakvarshney/Replace/blob/master/ScreenShots/messages.png?raw=true "SplashScreen")
+![Alt text](https://raw.githubusercontent.com/damakvarshney/Replace/master/ScreenShots/Replace%20Project.png?raw=true "SplashScreen")
